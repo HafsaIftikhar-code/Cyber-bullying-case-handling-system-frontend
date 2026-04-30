@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Incident Data</title>
+    <link rel="stylesheet" href="form.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<div class="overlay">
+
+    <div class="form-card">
+
+        <div class="form-header">
+            <div class="header-left">
+                <span class="alert">⚠</span>
+                <h2>INCIDENT DATA</h2>
+            </div>
+            <div class="header-icon">❌</div>
+        </div>
+
+        <div class="form-body">
+
+            <div class="row">
+                <div class="field">
+                    <label>FULL NAME</label>
+                    <input type="text" id="name" placeholder="" />
+                </div>
+                <div class="field">
+                    <label>PLATFORM</label>
+                    <div class="select-wrapper">
+                        <select id="platform">
+                            <option>Instagram</option>
+                            <option>Facebook</option>
+                            <option>WhatsApp</option>
+                            <option>TikTok</option>
+                            <option>Twitter</option>
+                            <option>Other</option>
+                        </select>
+                        <span class="arrow">▾</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>SEVERITY ANALYSIS</label>
+                <div class="severity">
+                    <button class="sev active" data-level="MILD">MILD</button>
+                    <button class="sev" data-level="MODERATE">MODERATE</button>
+                    <button class="sev" data-level="CRITICAL">CRITICAL</button>
+                </div>
+                <div class="severity-info" id="severity-info">
+                    <small style="color: #64748b;">Selected: <strong>MILD</strong> - Minor harassment or discomfort</small>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>NARRATIVE EVIDENCE</label>
+                <textarea id="evidence" placeholder=""></textarea>
+            </div>
+
+            <button class="submit-btn" onclick="queueReport()">Queue Report</button>
+
+        </div>
+    </div>
+</div>
+
+<script src="queue.js"></script>
+</body>
+</html>

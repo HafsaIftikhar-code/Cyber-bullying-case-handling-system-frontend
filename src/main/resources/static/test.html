@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Test</title>
+</head>
+<body>
+    <h1>Testing Form Functionality</h1>
+    <p>Open <a href="http://localhost:8081/C2/form.html" target="_blank">http://localhost:8081/C2/form.html</a> to test:</p>
+    <ul>
+        <li>✅ Severity buttons (MILD, MODERATE, CRITICAL) should be clickable</li>
+        <li>✅ Only one severity button should be active at a time</li>
+        <li>✅ Cross button (❌) should close the form</li>
+        <li>✅ Form should submit to backend API</li>
+    </ul>
+
+    <script>
+        // Test the API connection
+        setTimeout(async () => {
+            try {
+                const response = await fetch('http://localhost:8081/api/test');
+                if (response.ok) {
+                    console.log('✅ Backend API is working');
+                } else {
+                    console.log('❌ Backend API not responding');
+                }
+            } catch (error) {
+                console.log('❌ Cannot connect to backend:', error);
+            }
+        }, 3000);
+    </script>
+</body>
+</html>

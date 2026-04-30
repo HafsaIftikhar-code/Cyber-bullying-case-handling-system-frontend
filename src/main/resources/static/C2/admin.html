@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            🛡 <h2>CYBERBULLYING HANDLING SYSTEM</h2>
+        </div>
+
+        <div class="menu">
+            <p class="menu-title">PORTAL ACCESS</p>
+            <a href="user.html">User Reporting</a>
+            <a class="active">Admin Control</a>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+            <h1>Admin Terminal</h1>
+            <div class="top-info">
+                <span id="p-queue-count">P-Queue: 0</span>
+                <span id="fifo-count">FIFO: 0</span>
+                <span id="history-count">History: 0</span>
+                <button class="refresh-btn" onclick="refreshDashboard()" style="margin-right: 10px; padding: 5px 10px; border: none; border-radius: 5px; background: #28a745; color: white; cursor: pointer;">🔄 Refresh</button>
+                <div class="avatar">AD</div>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <section class="content">
+
+            <!-- TOP GRID -->
+            <div class="grid-2">
+
+                <!-- LIVE RESOLUTION -->
+                <div class="card center" style="min-height:300px;">
+                    <h3>⚡ Live Resolution Node</h3>
+                    <p class="muted" style="margin:15px 0;">Priority-First Scheduling</p>
+                    <button class="btn" onclick="pullNextCase()">Pull Next</button>
+                    <div id="next-case-display" style="margin-top: 20px; padding: 10px; background: #f8f9fa; border-radius: 8px; display: none;">
+                        <h4 style="margin: 0 0 10px 0; color: #333;">Next Case Details:</h4>
+                        <div id="next-case-content"></div>
+                    </div>
+                </div>
+
+                <!-- REPORTS DASHBOARD -->
+                <div class="card" style="min-height:300px;">
+                    <h3>📋 Submitted Reports</h3>
+                    <div id="reports-dashboard" style="margin-top: 15px;">
+                        <p class="muted">Loading reports...</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DETAILED REPORTS VIEW -->
+            <div class="grid-1" style="margin-top:25px;">
+                <div class="card">
+                    <h3>🔍 Detailed Report View</h3>
+                    <div id="detailed-reports" style="margin-top: 15px; max-height: 400px; overflow-y: auto;">
+                        <p class="muted">Select a report to view details</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOTTOM QUEUES -->
+            <div class="grid-1" style="margin-top:25px;">
+
+                <!-- PRIORITY QUEUE -->
+                <div class="card center">
+                    <h4 style="color:#ef4444;">● PRIORITY HEAP</h4>
+                    <p class="muted" style="margin:10px 0;">
+                        High severity cyberbullying cases
+                    </p>
+                    <div id="priority-queue-list" style="text-align: left; margin-top: 10px;">
+                        <small class="muted">No priority cases</small>
+                    </div>
+                </div>
+
+                <!-- STANDARD QUEUE -->
+                <div class="card center">
+                    <h4 style="color:#3b82f6;">● STANDARD QUEUE</h4>
+                    <p class="muted" style="margin:10px 0;">
+                        FIFO based normal cases
+                    </p>
+                    <div id="standard-queue-list" style="text-align: left; margin-top: 10px;">
+                        <small class="muted">No standard cases</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+</div>
+
+<script src="queue.js"></script>
+</body>
+</html>

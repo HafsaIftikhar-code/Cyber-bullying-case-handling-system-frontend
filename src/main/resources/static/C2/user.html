@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="logo">
+            🛡 <h2>CYBERBULLYING HANDLING SYSTEM</h2>
+        </div>
+
+        <div class="menu">
+            <p class="menu-title">PORTAL ACCESS</p>
+            <a class="active">User Reporting</a>
+            <a href="admin.html">Admin Control</a>
+
+            <p class="menu-title">OPERATIONS</p>
+            <a href="form.html" style="text-decoration: none; color: white;">+ New Report</a>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <h1>User Terminal</h1>
+            <div class="top-info">
+                <span>P-Queue: 0</span>
+                <span>FIFO: 0</span>
+                <div class="avatar">JD</div>
+            </div>
+        </header>
+
+        <section class="content center">
+            <h2 style="font-size:36px;">Safe Reporting Terminal</h2>
+            <p class="muted" style="max-width:600px;margin:15px 0 40px;">
+                Report cyberbullying securely. Our Java DS engine prioritizes
+                cases based on severity and impact.
+            </p>
+            
+
+            <div class="grid-1" style="max-width:900px;">
+                <div class="card">
+                    <h3>➕ File Report</h3>
+                    <p class="muted" style="font-size: small; margin-top: 5px;">
+                        Submit incident details. Critical cases automatically
+                        move to priority queue.
+                        
+                    </p>
+                    <button class="btn btn-blue" style="margin-top: 28px;"> <a href="form.html" style="text-decoration: none; color: white;">Start Submission</a></button>
+                </div>
+
+                <div class="card">
+                    <h3>🔍 Track Case</h3>
+                    <input style="width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;margin:10px 0;" placeholder="CASE-ID">
+                    <button class="btn btn-blue">Find</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</div>
+
+<script src="queue.js"></script>
+</body>
+</html>
