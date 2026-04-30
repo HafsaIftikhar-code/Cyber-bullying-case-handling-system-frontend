@@ -1,5 +1,5 @@
 // API BASE URL
-const API_BASE = 'http://localhost:8081/api';
+const API_BASE = '/api';
 
 // SELECTED SEVERITY - Default to MILD
 let selectedSeverity = "MILD";
